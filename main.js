@@ -5,3 +5,21 @@ let storyWords = story.split(" "); // turns the string into an array
 let unnecessaryWord = "literally";
 let misspelledWord = "beautifull";
 let badWord = "freaking";
+
+let count = 0;
+
+storyWords.forEach((word) => {
+  return count++;
+});
+
+console.log(count);
+
+storyWords = storyWords.filter((word) => {
+  if (word !== unnecessaryWord) {
+    return word;
+  }
+});
+
+console.log(storyWords);
+
+console.log(storyWords.join(" "));
