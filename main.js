@@ -10,16 +10,28 @@ let count = 0;
 
 storyWords.forEach((word) => {
   return count++;
-});
-
-console.log(count);
+}); // calculates the overall amount of words in the array
 
 storyWords = storyWords.filter((word) => {
   if (word !== unnecessaryWord) {
     return word;
   }
+}); // filters out the repetitive word
+
+storyWords = storyWords.map((word) => {
+  if (word === misspelledWord) {
+    return "beautiful";
+  } else {
+    return word;
+  }
+}); // replaces the misspelled word with the correct one
+
+const badWordIndex = storyWords.findIndex((word) => {
+  if (word === badWord) {
+    return word;
+  }
 });
 
-console.log(storyWords);
+storyWords[78] = "really";
 
 console.log(storyWords.join(" "));
