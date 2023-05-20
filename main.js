@@ -30,8 +30,18 @@ const badWordIndex = storyWords.findIndex((word) => {
   if (word === badWord) {
     return word;
   }
-});
+}); // finds the index of a specific word in the array
 
 storyWords[78] = "really";
+
+const lengthCheck = storyWords.every((word) => {
+  return word.length >= 10;
+}); // checks whether every element in the array satisfies the condition
+
+const longWordIndex = storyWords.findIndex((word) => {
+  return word.length > 10;
+});
+
+storyWords[111] = "stunning";
 
 console.log(storyWords.join(" "));
